@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark/Light Mode Toggle</title>
+    <style>
+        body {
+            padding: 50px;
+            transition: all 0.3s ease;
+            font-family: Arial, sans-serif;
+        }
+        
+        /* Light Mode (Default) */
+        body.light {
+            background-color: #ffffff;
+            color: #333333;
+        }
+        
+        /* Dark Mode */
+        body.dark {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+        
+        h1 {
+            transition: all 0.3s ease;
+        }
+        
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        button.light {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        button.dark {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body class="light">
+    <h1>Good Morning ☀️</h1>
+    <button id="btn" class="light">🌙 Switch to Dark Mode</button>
+    
+    <script>
+        const btn = document.getElementById('btn');
+        const body = document.body;
+        const heading = document.querySelector('h1');
+        
+        let isDark = false;
+        
+        btn.addEventListener("click", function() {
+            isDark = !isDark;  // Toggle mode
+            
+            if (isDark) {
+                // Switch to Dark Mode
+                body.classList.remove('light');
+                body.classList.add('dark');
+                heading.textContent = 'Good Night 🌙';
+                btn.textContent = '☀️ Switch to Light Mode';
+                btn.classList.remove('light');
+                btn.classList.add('dark');
+            } else {
+                // Switch to Light Mode
+                body.classList.remove('dark');
+                body.classList.add('light');
+                heading.textContent = 'Good Morning ☀️';
+                btn.textContent = '🌙 Switch to Dark Mode';
+                btn.classList.remove('dark');
+                btn.classList.add('light');
+            }
+        });
+    </script>
+</body>
+</html>

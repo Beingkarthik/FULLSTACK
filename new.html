@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> good mrng</h1>
+    <button id="lightbtn"> click me </button>
+    <button id="darkbtn"> click dark</button>
+    <script>
+        document.getElementById("lightbtn").addEventListener("click",function(){
+            document.body.style.backgroundColor="white"
+            document.body.style.color="black"
+            alert("colour changed")
+          
+        })
+        document.getElementById("darkbtn").addEventListener("click",function(){
+            document.body.style.backgroundColor="black"
+            document.body.style.color="white"
+            alert("coloured changed ")
+          
+        })
+    </script>
+</body>
+</html>

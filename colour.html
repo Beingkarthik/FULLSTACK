@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: white;
+            color: black;
+        }
+        .dark{
+            background-color: black;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <h1> good morning</h1>
+    <button id="btn"> click me </button>
+    <script>
+        document.getElementById('btn').addEventListener("click",function(){
+            document.querySelector('h1').textContent="good night"
+            alert('changed')
+             document.body.classList.toggle("dark");
+        })
+
+    </script>
+</body>
+</html>
